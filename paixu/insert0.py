@@ -9,9 +9,9 @@
 
 import random
 import time
-import numba
+# import numba
 
-@numba.jit
+# @numba.jit
 
 def d():
     list = []
