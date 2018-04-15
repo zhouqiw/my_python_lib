@@ -8,19 +8,16 @@
 """
 
 import random
-import time
-import numba
 
-@numba.jit
-def d(m):
+
+cddef d():
     list = []
-    n = m
+    n = 10000
     now = time.time()
     for i in range(n):
         list.append(random.randint(0,5*n))
 
     for i in range(0,len(list)):
-        # print('------------------')
         j = 0
         while(j<i):
             if list[i]<list[j]:break
@@ -36,7 +33,8 @@ def d(m):
         # print list
     for k in range(20):
         print(list[k])
-    print(n)
+
     print (time.time() - now)
 
-d(100)
+
+

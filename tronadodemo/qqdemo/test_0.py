@@ -24,8 +24,8 @@ class IndexHander(web.RequestHandler):
 
 class LoginHander(web.RequestHandler):
     def get(self, *args, **kwargs):
-        # self.write('登陆界面！')
-        self.render('html1.html')
+        self.write('登陆界面！')
+        # self.render('html1.html')
 
 
         def post(self, *args, **kwargs):

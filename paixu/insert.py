@@ -13,9 +13,9 @@ import time
 
 # @numba.jit
 
-def d():
+def d(m):
     list = []
-    n = 10000
+    n = m
     now = time.time()
     for i in range(n):
         list.append(random.randint(0,5*n))
@@ -39,7 +39,8 @@ def d():
 
     print (time.time() - now)
 
-d()
+print('pypy is running')
+d(100)
 
 
 # b= 0
