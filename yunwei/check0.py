@@ -41,9 +41,10 @@ while 1:
             if os.path.isfile(path2+i):
                 if checkfile(i,i) :
                     print 'same'
-                    shutil.move(path1+i,path3+i)
+
                 else:
                     print 'diff'
+                    shutil.move(path1 + i, path3 + i)
             else:
                 print 'path2 is not this file'
 
