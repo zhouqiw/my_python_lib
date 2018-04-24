@@ -40,7 +40,7 @@ def d(m):
     print (time.time() - now)
 
 print('pypy is running')
-d(100)
+d(100000)
 
 
 # b= 0

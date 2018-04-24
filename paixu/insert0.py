@@ -39,4 +39,4 @@ def d(m):
     print(n)
     print (time.time() - now)
 
-d(100)
+d(100000)

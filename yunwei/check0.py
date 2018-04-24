@@ -19,7 +19,20 @@ path3 = '/Users/zhouqi/Desktop/g/0/0/3/'       #工作目录
 
 def checkfile(file1,file2):                    #检测文件是否相同的函数
 
-    return  filecmp.cmp(path1+file1,path2+file2)
+    return  filecmp.cmp(file1,file2)
+
+def mvfile(file,file_work):
+
+    shutil.move(file, file_work)
+
+def get_bakfile_name_and_path(filename_yc): #从异常目录文件文件名得到备份文件名和目录
+    filname_bak=''
+    filename_bak_path=''
+    # if os.path.isfile(path2 + i):  # 判断备份目录是否存在该文件
+    #等待完成
+    return filname_bak,filename_bak_path
+
+
 
 def main():
     while 1:                                             #
@@ -36,15 +49,15 @@ def main():
         print list
         if count > 0 :
             for i in list :
-                if os.path.isfile(path2+i):               #判断备份目录是否存在该文件
-                    if checkfile(i,i) :
-                        print 'same'
-    
-                    else:
-                        print 'diff'
-                        shutil.move(path1 + i, path3 + i)  #当文件不同时移动到工作目录
+                file_bak,file_bak_path=get_bakfile_name_and_path(i) #得到文件目录
+
+                if checkfile(path1+i,file_bak_path+filename) :
+                    print 'same'
+
                 else:
-                    print 'path2 is not this file'         #当文件不存在时
+                    print 'diff'
+                    shutil.move(path1 + i, path3 + i)  #当文件不同时移动到工作目录
+                
 
         time.sleep(1)                                      #执行间隔设置一秒
 
