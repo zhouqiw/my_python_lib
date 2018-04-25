@@ -26,6 +26,7 @@ def mvfile(file,file_work):
     shutil.move(file, file_work)
 
 def get_bakfile_name_and_path(filename_yc): #从异常目录文件文件名得到备份文件名和目录
+    #还要判断文件的类型
     filname_bak=''
     filename_bak_path=''
     # if os.path.isfile(path2 + i):  # 判断备份目录是否存在该文件
@@ -57,7 +58,7 @@ def main():
                 else:
                     print 'diff'
                     shutil.move(path1 + i, path3 + i)  #当文件不同时移动到工作目录
-                
+
 
         time.sleep(1)                                      #执行间隔设置一秒
 
