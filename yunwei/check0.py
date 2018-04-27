@@ -33,7 +33,15 @@ def get_bakfile_name_and_path(filename_yc): #从异常目录文件文件名得�
     #等待完成
     return filname_bak,filename_bak_path
 
-
+"""
+解压
+import tarfile
+tar = tarfile.open(“/tmp/tartest.tar.gz”)
+names = tar.getnames()
+for name in names:
+  tar.extract(name,path=”/tmp”)
+tar.close()
+"""
 
 def main():
     while 1:                                             #
